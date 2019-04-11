@@ -1,14 +1,9 @@
-Welcome to Glitch
+Gareth Emery Podcast RSS Feed Generator
 =================
-
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
+The Gareth Emery Podcast was removed from the iTunes and Google podcast repositories after Gareth released his new Electric For Life podcast.  Unfortunately this made it difficult for longtime listeners to listen to old episodes within their favorite podcast app.  The goal of this project was to host the podcast on archive.org and dynamically generate a publicly available RSS feed that could be re-uploaded to podcast repositories.  This would allow older fans to listen to the podcast while eliminating hosting costs that prevented emery from continuing to offer the podcast on iTunes ect.
 
 
-Your Project
+Project Layout
 ------------
 
 On the front-end,
@@ -19,9 +14,3 @@ On the back-end,
 - your app starts at `server.js`
 - add frameworks and packages in `package.json`
 - safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-
-Made by [Glitch](https://glitch.com/)
--------------------
-
-\ ゜o゜)ノ
