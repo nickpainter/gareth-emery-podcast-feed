@@ -1,6 +1,6 @@
 Gareth Emery Podcast RSS Feed Generator
 =================
-The Gareth Emery Podcast was removed from the iTunes and Google podcast repositories after Gareth released his new Electric For Life podcast.  Unfortunately this made it difficult for longtime listeners to listen to old episodes within their favorite podcast app.  The goal of this project was to host the podcast on archive.org and dynamically generate a publicly available RSS feed that could be re-uploaded to podcast repositories.  This would allow older fans to listen to the podcast while eliminating hosting costs that prevented emery from continuing to offer the podcast on iTunes ect.
+The Gareth Emery Podcast was removed from the iTunes and Google podcast repositories after Gareth released his new Electric For Life podcast.  Unfortunately, this made it difficult for longtime listeners to listen to old episodes within their favorite podcast app.  The goal of this project was to host the podcast on archive.org and dynamically generate a publicly available RSS feed that could be re-uploaded to podcast repositories.  This would allow older fans to listen to the podcast while eliminating hosting costs that prevented emery from continuing to offer the podcast on iTunes ect.
 
 
 Project Layout
