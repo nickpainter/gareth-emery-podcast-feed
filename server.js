@@ -1,7 +1,3 @@
-// server.js
-// where your node app starts
-
-// init project
 require("dotenv").config();
 const express = require("express");
 const xmlHelper = require("xml-js");
@@ -83,8 +79,6 @@ const start = async function () {
     title: (x.title && x.title._text) || (x._attributes && x._attributes.name),
   }));
 
-  //finalResult2.map(x => console.log(x));
-
   finalResult2.map((fileData, index) => {
     feed.addItem({
       title: fileData.name,
@@ -98,15 +92,14 @@ const start = async function () {
       //date: 'May 27, 2012', // any format that js Date can parse.
       date: addDays(addDays(new Date(), -365), index),
       // latitude and longitude of Manchester UK are: 53.483959, -2.244644.
-      lat: 33.417974, //optional latitude field for GeoRSS
-      long: -111.933231, //optional longitude field for GeoRSS
+      lat: 53.483959, //optional latitude field for GeoRSS
+      long: -2.244644, //optional longitude field for GeoRSS
       //enclosure : {url:`http://ia601400.us.archive.org/9/items/TheGarethEmeryPodcast001/${fileName}`}, //{url:'...', file:'path-to-file'}, // optional enclosure
       enclosure: {
         url: encodeURI(
           `http://ia601408.us.archive.org/27/items/TheGarethEmeryPodcast/${fileData.fileName}`
         ),
       },
-
       itunesAuthor: "Gareth Emery",
       itunesExplicit: true,
       itunesSubtitle: "Original Gareth Emery Podcast",
