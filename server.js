@@ -121,6 +121,16 @@ const start = async function () {
     );
     response.send(xml);
   });
+
+  // write rss feed to file
+  // const fs = require("fs");
+  // fs.writeFile("rss.xml", xml, function (err) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     console.log("rss.xml written");
+  //   }
+  // });
 };
 
 start();
