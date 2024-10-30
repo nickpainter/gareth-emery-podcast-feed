@@ -14,7 +14,7 @@ let xml;
 
 async function getData() {
   return await axios.get(
-    "http://ia601408.us.archive.org/27/items/TheGarethEmeryPodcast/TheGarethEmeryPodcast_files.xml"
+    "https://archive.org/download/TheGarethEmeryPodcast/TheGarethEmeryPodcast_files.xml"
   );
 }
 
@@ -27,7 +27,7 @@ const start = async function () {
     feed_url: "https://garethemerypodcast.glitch.me/",
     site_url: "https://garethemerypodcast.glitch.me/",
     image_url:
-      "https://ia601408.us.archive.org/27/items/TheGarethEmeryPodcast/GarethEmeryPodcast.jpg",
+      "https://archive.org/download/TheGarethEmeryPodcast/GarethEmeryPodcast.jpg",
     docs: "http://example.com/rss/docs.html",
     author: "Gareth Emery",
     managingEditor: "",
@@ -52,7 +52,7 @@ const start = async function () {
       ],
     },
     itunesImage:
-      "https://ia601408.us.archive.org/27/items/TheGarethEmeryPodcast/GarethEmeryPodcast.jpg",
+      "https://archive.org/download/TheGarethEmeryPodcast/GarethEmeryPodcast.jpg",
   });
 
   var options = { ignoreComment: true, alwaysChildren: true };
@@ -84,7 +84,7 @@ const start = async function () {
       title: fileData.name,
       description: `${fileData.title}`,
       url: encodeURI(
-        `http://ia601408.us.archive.org/27/items/TheGarethEmeryPodcast/${fileData.fileName}`
+        `https://archive.org/download/TheGarethEmeryPodcast/${fileData.fileName}`
       ),
       //guid: index, // optional - defaults to url
       categories: ["Music"], // optional - array of item categories
@@ -97,7 +97,7 @@ const start = async function () {
       //enclosure : {url:`http://ia601400.us.archive.org/9/items/TheGarethEmeryPodcast001/${fileName}`}, //{url:'...', file:'path-to-file'}, // optional enclosure
       enclosure: {
         url: encodeURI(
-          `http://ia601408.us.archive.org/27/items/TheGarethEmeryPodcast/${fileData.fileName}`
+          `https://archive.org/download/TheGarethEmeryPodcast/${fileData.fileName}`
         ),
       },
       itunesAuthor: "Gareth Emery",
