@@ -134,7 +134,7 @@ const start = async function () {
   });
 
   // copy rss.xml to the docs folder
-  const docsPath = path.join(__dirname, "docs", "rss.xml");
+  const docsPath = path.join(__dirname, "docs", "index.xml");
   fs.copyFile("rss.xml", docsPath, (err) => {
     if (err) {
       console.error("Error copying file:", err);
