@@ -105,7 +105,7 @@ const start = async function () {
       itunesSubtitle: "Original Gareth Emery Podcast",
       itunesSummary: "An archive of the original Gareth Emery Podcast.",
       itunesDuration: fileData.length,
-      itunesNewFeedUrl: `https://nickpainter.github.io/gareth-emery-podcast-feed/rss.xml`,
+      itunesNewFeedUrl: `https://nickpainter.github.io/gareth-emery-podcast-feed`,
       // itunesKeywords: ["trance", "house", "techno"], // property has been deprecated by apple, we don't know if other platform still use this when it is provided
     });
   });
@@ -123,23 +123,14 @@ const start = async function () {
   //   response.send(xml);
   // });
 
-  // write rss feed to file
+  // write the rss file to the docs folder
   const fs = require("fs");
-  fs.writeFile("rss.xml", xml, function (err) {
+  const docsPath = path.join(__dirname, "docs", "index.xml");
+  fs.writeFile(docsPath, xml, function (err) {
     if (err) {
       console.log(err);
     } else {
-      console.log("rss.xml written");
-    }
-  });
-
-  // copy rss.xml to the docs folder
-  const docsPath = path.join(__dirname, "docs", "index.xml");
-  fs.copyFile("rss.xml", docsPath, (err) => {
-    if (err) {
-      console.error("Error copying file:", err);
-    } else {
-      console.log("rss.xml copied to docs folder");
+      console.log("rss.xml written to docs folder");
     }
   });
 };
