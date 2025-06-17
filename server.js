@@ -105,6 +105,7 @@ const start = async function () {
       itunesSubtitle: "Original Gareth Emery Podcast",
       itunesSummary: "An archive of the original Gareth Emery Podcast.",
       itunesDuration: fileData.length,
+      itunesNewFeedUrl: `https://nickpainter.github.io/gareth-emery-podcast-feed/rss.xml`,
       // itunesKeywords: ["trance", "house", "techno"], // property has been deprecated by apple, we don't know if other platform still use this when it is provided
     });
   });
@@ -112,25 +113,35 @@ const start = async function () {
   xml = feed.buildXml();
   console.log("xml built");
 
-  app.get("/rss", function (request, response) {
-    response.set("Content-Type", "text/xml");
-    response.setHeader("Expires", 0);
-    response.set(
-      "Cache-Control",
-      "no-store, no-cache, must-revalidate, private"
-    );
-    response.send(xml);
-  });
+  // app.get("/rss", function (request, response) {
+  //   response.set("Content-Type", "text/xml");
+  //   response.setHeader("Expires", 0);
+  //   response.set(
+  //     "Cache-Control",
+  //     "no-store, no-cache, must-revalidate, private"
+  //   );
+  //   response.send(xml);
+  // });
 
   // write rss feed to file
-  // const fs = require("fs");
-  // fs.writeFile("rss.xml", xml, function (err) {
-  //   if (err) {
-  //     console.log(err);
-  //   } else {
-  //     console.log("rss.xml written");
-  //   }
-  // });
+  const fs = require("fs");
+  fs.writeFile("rss.xml", xml, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("rss.xml written");
+    }
+  });
+
+  // copy rss.xml to the docs folder
+  const docsPath = path.join(__dirname, "docs", "rss.xml");
+  fs.copyFile("rss.xml", docsPath, (err) => {
+    if (err) {
+      console.error("Error copying file:", err);
+    } else {
+      console.log("rss.xml copied to docs folder");
+    }
+  });
 };
 
 start();
