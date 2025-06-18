@@ -24,10 +24,12 @@ const start = async function () {
   const feed = new Podcast({
     title: "Gareth Emery Podcast",
     description: "The Gareth Emery Podcast",
-    feed_url: "https://garethemerypodcast.glitch.me/",
-    site_url: "https://garethemerypodcast.glitch.me/",
-    image_url:
-      "https://archive.org/download/TheGarethEmeryPodcast/GarethEmeryPodcast.jpg",
+
+    feedUrl: "https://nickpainter.github.io/gareth-emery-podcast-feed",
+    siteUrl: "https://nickpainter.github.io/gareth-emery-podcast-feed",
+
+    generator: "https://nickpainter.github.io/gareth-emery-podcast-feed",
+    imageUrl: "https://archive.org/download/TheGarethEmeryPodcast/GarethEmeryPodcast.jpg",
     docs: "http://example.com/rss/docs.html",
     author: "Gareth Emery",
     managingEditor: "",
@@ -53,6 +55,7 @@ const start = async function () {
     },
     itunesImage:
       "https://archive.org/download/TheGarethEmeryPodcast/GarethEmeryPodcast.jpg",
+      siteUrl: "https://nickpainter.github.io/gareth-emery-podcast-feed",
   });
 
   var options = { ignoreComment: true, alwaysChildren: true };
@@ -124,13 +127,15 @@ const start = async function () {
   // });
 
   // write the rss file to the docs folder
+  // the file must be named "index" in order for it to be picked up by GitHub Pages
+  // and used for https://nickpainter.github.io/gareth-emery-podcast-feed/
   const fs = require("fs");
   const docsPath = path.join(__dirname, "docs", "index.xml");
   fs.writeFile(docsPath, xml, function (err) {
     if (err) {
       console.log(err);
     } else {
-      console.log("rss.xml written to docs folder");
+      console.log("index.xml written to docs folder");
     }
   });
 };

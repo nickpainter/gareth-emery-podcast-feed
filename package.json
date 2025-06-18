@@ -7,17 +7,17 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "express": "^5.1.0",
     "xml-js": "^1.6.11",
-    "axios": "^1.6.5",
+    "axios": "^1.10.0",
     "podcast": "^2.0.1",
-    "date-fns": "^3.2.0",
+    "date-fns": "^4.1.0",
     "path": "^0.12.7",
     "nocache": "^4.0.0",
-    "dotenv": "16.3.1"
+    "dotenv": "16.5.0"
   },
-  "engines": {
-    "node": "20.x"
+  "devDependencies": {
+    "prettier": "^3.5.3"
   },
   "repository": {
     "url": "https://github.com/nickpainter/gareth-emery-podcast-feed"
